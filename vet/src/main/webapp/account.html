@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Client and Pet Info</title>
+</head>
+<body>
+	
+<div style="margin-top: 4%;">
+	<div class="container">
+		<div>
+			<h3>Find Account By:</h3>
+			
+			<input type="text" id= "clientId" ng-model = "client.clientId" placeholder="Client ID:"> 
+		<!--	<span class="font-weight-bold">OR</span> 
+			<input type="text" id ="phoneNumber" ng-model = "client.phoneNumber" placeholder="Phone Number">  -->
+			
+			<br>
+			<br>
+			<button id = "btn" ng-click="getClientsById()">Go</button>
+		
+		
+	</div>
+
+	<div class="card mt-3">
+		<div class="card-header bg-info">
+			<h4 class="text-center">Client Information</h4>
+			
+		</div>
+		<div class="card-body">
+			<table class="table table-hover" id = "clientTable">
+				<thead class="thead-light">
+					<tr>
+						<th>Client Id</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Phone Number</th>
+						<th>Address</th>
+						<th>Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr >
+						<td>{{client.clientId}}</td>
+						<td>{{client.firstName}}</td>
+						<td>{{client.lastName}}</td>
+						<td>{{client.phoneNumber}}</td>
+						<td>{{client.address}}</td>
+						<td>{{client.email}}</td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+
+		<div class="card mt-3">
+			<div class="card-header bg-info">
+				<h4 class="text-center">Pet Information</h4>
+			</div>
+			<div class="card-body" >
+				<table class="table table-hover">
+					<thead class="thead-light">
+						<tr>
+							<th>Client Id</th>
+							<th>Pet Id</th>
+							<th>Pet Name</th>
+							<th>Age</th>
+							<th>Gender</th>
+							<th>Neuter/Spay</th>
+							<th>Breed</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="pet in pets" ng-click="getAppointmentsByPetId(pet.petId)"> <!--  ng-click = "getAppointmentsById(appointment.petId)"--> 
+							<td>{{pet.clientId}}</td>
+							<td>{{pet.petId}}</td>
+							<td>{{pet.petName}}</td>
+							<td>{{pet.petAge}}</td>
+							<td>{{pet.gender}}</td>
+							<td>{{pet.fixedStatus}}</td>
+							<td>{{pet.breed}}</td>
+							<td><button class="text-primary" ng-click="goToNewAppointmentForm(pet.petId)">Book Appointment</button></td>
+						</tr>
+						
+					</tbody>
+					
+				</table>
+				<button class="text-primary" ng-click="goToNewPetForm(client.clientId)">Add New Pet</button><br>
+				
+			</div>
+
+					<div class="card mt-3 ">
+						<div class="card-header bg-info">
+							<h4 class="text-center">Appointment Information</h4>
+						</div>
+						<div class="card-body">
+							<table class="table table-hover">
+								<thead class="thead-light">
+									<tr>
+										<th>Appointment Id</th>
+										<th>Client Id</th>
+										<th>Pet Id</th>
+										<th>Pet Name</th>
+										<th>Last Name</th>
+										<th>Visit Reason</th>
+										<th>Appointment Date</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="appointment in appointments">
+										<td>{{appointment.appointmentId}}</td>
+										<td>{{appointment.clientId}}</td>
+										<td>{{appointment.petId}}</td>
+										<td>{{appointment.petName}}</td>
+										<td>{{appointment.lastName}}</td>
+										<td>{{appointment.visitReason}}</td>
+										<td>{{appointment.appointmentDate}}</td>
+										<td><button class="text-primary"
+												ng-click="goToUpdateForm(appointment.appointmentId)">Update
+												Appointment</button></td>
+									</tr>
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

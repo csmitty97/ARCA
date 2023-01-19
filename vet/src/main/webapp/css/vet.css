@@ -1,0 +1,106 @@
+
+/* Main HTML */
+.dogPhoto{
+	position:relative;
+	
+}
+
+.indexTitle{
+	position: absolute;
+	top:5rem;
+	left:12%;
+	text-align:center;
+	color:black;
+	
+}
+.wrapper{
+	position:relative;
+	
+}
+
+/* Create HTML */
+
+.createTitle{
+	text-align:center;
+	margin-top:5rem;
+}
+
+#stack-background{
+	background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg'); 
+	background-size: cover;
+	margin-top:7%;
+}
+
+.vertical-height{
+	width:100%;
+	height: 50%;
+}
+
+.background{
+	background-image: url("../images/pawprints.jpg");
+	background-size:cover;
+
+}
+
+
+.container{
+  margin-top:5%;
+  padding:1em 0 20px 20px;
+  width:50%;
+  background-color: #ffe8c9;
+  opacity: 80%;
+  
+}
+
+.maincontainer{
+  padding:1em 1em 20px 20px;
+  width:40%;
+  background-color: #ffe8c9;
+  opacity: 80%;
+  height:35%;
+  justify-content: center;
+  text-align:center;
+  margin-left:30%;
+  
+  margin-top:2%;
+}
+
+.center{
+	text-align:center;
+	margin-top:5%;
+}
+
+footer{
+    bottom:0;
+    position:absolute;
+    margin-top:2em;
+    font-size:12px;
+}
+
+.footer{
+    position:sticky;
+    width:100%;
+    border-top-style:solid;
+    /* Height of the footer*/
+    padding-top:3px;
+    background-color:#ffeed9;
+    margin-bottom:-1em;
+}
+  footer ul {
+    list-style: none;
+    display:flex;
+    margin-top:.35em;
+}
+
+footer li{
+    display:inline-block;
+    margin-right:5em;
+    margin-bottom: 7px;
+    
+}
+
+footer a:first-child{
+    margin:auto;
+    margin-left:3em;
+}
+

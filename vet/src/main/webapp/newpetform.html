@@ -1,0 +1,83 @@
+<!Doctype html>
+<html>
+<head>
+<title>Create Pet Form</title>
+</head>
+
+
+<body>
+	
+	<div class="mx-auto col-10" style="margin-top: 11rem">
+		<h1 class="text-center">New Pet Form</h1>
+		<h5 class="text-success" ng-bind="createStatus"></h5>
+		<br>
+		<form name="newPetForm">
+			<div class="card-body">
+			
+			<div>
+						<span class="font-weight-bold">Client ID:</span> <span
+							ng-bind="client.clientId" id="clientId"></span>
+					</div>
+					
+					<br>
+			
+				<div class="form-group">
+
+
+					<label for="petName" class="font-weight-bold">Pet Name:</label>
+					<input ng-model="client.petName" required name="petName"
+						type="text" class="form-control" id="petName"> <span
+						ng-show="newPetForm.petName.$touched && newPetForm.petName.$invalid"
+						class="text-danger"> *Pet Name is required* </span>
+				</div>
+
+				<div class="form-group">
+					<label for="age" class="font-weight-bold">Pet Age:</label> <input
+						ng-model="client.petAge" required name="age" type="text"
+						class="form-control" id="age"> <span
+						ng-show="newPetForm.age.$touched && newPetForm.age.$invalid"
+						class="text-danger"> *Pet age is required* </span>
+				</div>
+
+					<div class="form-group">
+						<label for="gender" class="font-weight-bold">Gender:</label> <select
+							ng-options="value for value in genders" required name="gender"
+							ng-model="client.gender" class="form-control" id="gender">
+						</select><span
+							ng-show="newPetForm.gender.$touched && newPetForm.gender.$invalid"
+							class="text-danger"> Gender is required </span>
+					</div>
+
+					<div class="form-group">
+						<label for="fixedStatus" class="font-weight-bold">Spay/Neuter:</label> <select
+							ng-options="value for value in fixedStatuses" required name="fixedStatus"
+							ng-model="client.fixedStatus" class="form-control" id="fixedStatus">
+						</select> <span
+							ng-show="newPetForm.fixedStatus.$touched && newPetForm.fixedStatus.$invalid"
+							class="text-danger"> Spay/Neuter Status is required </span>
+					</div>
+
+				<div class="form-group">
+					<label for="breed" class="font-weight-bold">Breed:</label> <input
+						ng-model="client.breed" required name="breed" type="text"
+						class="form-control" id="breed"> <span
+						ng-show="newPetForm.breed.$touched && newPetForm.breed.$invalid"
+						class="text-danger"> *Pet Breed is required* </span>
+				</div>
+
+
+
+				<div class="text-center">
+					<button type="submit" class="btn btn-primary" id="modal"
+						formaction="ADD URL HERE..." ng-click="createPet(); goToAccount()">Create</button>
+					<button type="reset" class="btn btn-primary ">Reset</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	
+
+</body>
+
+</html>
